@@ -1,0 +1,11 @@
+# Mac System Junk
+.DS_Store
+
+# C++ Executables (The Cakes)
+*.exe
+*.out
+*.o
+*.dSYM
+
+# Specific files to ignore (The one you already made)
+insertion
