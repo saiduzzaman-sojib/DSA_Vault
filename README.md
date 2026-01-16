@@ -60,9 +60,12 @@ My goal is to move beyond "memorizing code" to **understanding the logic** behin
 ## 📂 Repository Structure
 ```text
 DSA_Vault/
-├── 01_Arrays/           # Array manipulations and Matrix problems
-├── 02_LinkedLists/      # Implementation of LL
-├── 03_Stacks_Queues/    # Stack and Queue problems
-├── 04_Recursion/        # Recursion and Backtracking
-├── 05_Sorting/          # All Sorting Algorithms
-└── LeetCode_Solutions/  # Random practice problems# DSA_Vault
+├── 01_Arrays/
+├── 02_LinkedLists/
+├── 03_Stacks_Queues/
+├── 04_Recursion/
+├── 05_Sorting/
+├── 06_Graphs/              <-- NEW (BFS, DFS, Prims, Kruskals)
+├── 07_Dynamic_Programming/ <-- NEW (Knapsack DP version)
+├── 08_Greedy/              <-- NEW (Knapsack Greedy version)
+└── LeetCode_Solutions/
