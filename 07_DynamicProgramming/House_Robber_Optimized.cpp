@@ -17,10 +17,10 @@ int rob(vector<int>& money) {
         int pick = money[i] + prev2;
         int skip = prev;
 
-        int curr = max(pick, skip);
+        int current = max(pick, skip);
 
         prev2 = prev;
-        prev = curr;
+        prev = current;
     }
 
     return prev;
