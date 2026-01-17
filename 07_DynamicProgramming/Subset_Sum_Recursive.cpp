@@ -3,23 +3,23 @@
 
 using namespace std;
 
-bool isSubsetSum(vector<int>& arr, int n, int sum) {
+bool SubsetSum(vector<int>& arr, int n, int sum) {
     if (sum == 0) return true;
     if (n == 0) return false;
 
     if (arr[n - 1] > sum) {
-        return isSubsetSum(arr, n - 1, sum);
+        return SubsetSum(arr, n - 1, sum);
     }
 
-    return isSubsetSum(arr, n - 1, sum) || 
-           isSubsetSum(arr, n - 1, sum - arr[n - 1]);
+    return SubsetSum(arr, n - 1, sum) || 
+           SubsetSum(arr, n - 1, sum - arr[n - 1]);
 }
 
 int main() {
     vector<int> arr = {3, 34, 4, 12, 5, 2};
     int sum = 9;
 
-    if (isSubsetSum(arr, arr.size(), sum)) {
+    if (SubsetSum(arr, arr.size(), sum)) {
         cout << "True" << endl;
     } else {
         cout << "False" << endl;
