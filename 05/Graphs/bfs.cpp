@@ -1,39 +1,40 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
-int main()
-{
-    int n, i, j, key;
-    cin >> n;
-    vector<int> arr(n);
-    
-    for(i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
+void bfs(int start, vector<vector<int>>& adj, int V) {
+    vector<bool> visited(V, false);
+    queue<int> q;
 
-    cout << "Current element" << endl;
-    for(i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
+    visited[start] = true;
+    q.push(start);
 
-    for(i = 1; i < n; i++)
-    {
-        key = arr[i];
-        for(j = i - 1; j >= 0 && arr[j] > key; j--)
-        {
-            arr[j + 1] = arr[j];
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        cout << u << " ";
+
+        for (int v : adj[u]) {
+            if (!visited[v]) {
+                visited[v] = true;
+                q.push(v);
+            }
         }
-        arr[j + 1] = key;
     }
+}
 
-    cout << endl;
-    cout << "Sorted Array";
-    for(i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
+int main() {
+    int V = 5;
+    vector<vector<int>> adj(V);
+
+    adj[0] = {1, 2};
+    adj[1] = {0, 3, 4};
+    adj[2] = {0};
+    adj[3] = {1};
+    adj[4] = {1};
+
+    cout << "BFS Traversal: ";
+    bfs(0, adj, V);
     return 0;
 }
