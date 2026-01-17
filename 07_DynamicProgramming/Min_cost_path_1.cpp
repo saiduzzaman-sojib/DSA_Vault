@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int findMinCost(vector<vector<int>>& cost, int x, int y) {
+int findMinValue(vector<vector<int>>& cost, int x, int y) {
     int m = cost.size();
     int n = cost[0].size();
 
@@ -17,9 +17,9 @@ int findMinCost(vector<vector<int>>& cost, int x, int y) {
         return cost[x][y];
     }
 
-    int right = findMinCost(cost, x, y + 1);
-    int down = findMinCost(cost, x + 1, y);
-    int diagonal = findMinCost(cost, x + 1, y + 1);
+    int right = findMinValue(cost, x, y + 1);
+    int down = findMinValue(cost, x + 1, y);
+    int diagonal = findMinValue(cost, x + 1, y + 1);
 
     int minPath = min({right, down, diagonal});
 
@@ -29,7 +29,7 @@ int findMinCost(vector<vector<int>>& cost, int x, int y) {
 }
 
 int minCost(vector<vector<int>>& cost) {
-    return findMinCost(cost, 0, 0);
+    return findMinValue(cost, 0, 0);
 }
 
 int main() {
@@ -40,6 +40,5 @@ int main() {
     };
 
     cout << minCost(cost) << endl;
-
     return 0;
 }
