@@ -1,19 +1,27 @@
-# Ignore all compiled binaries and executables
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Compiled executables and debug folders
 *.exe
 *.out
+*.app
+*.bin
 *.o
 *.obj
-*.bin
 *.dSYM/
 .vscode/
 
-# Ignore extensionless compiled binaries on macOS/Linux while allowing source code
+# Ignore all extensionless binaries (C++ builds on Mac)
 *
 !*/
 !*.cpp
 !*.c
-!*.dart
+!*.h
+!*.hpp
 !*.java
+!*.dart
 !*.py
 !*.md
+!*.txt
 !.gitignore
